@@ -16,6 +16,7 @@ jobs:
       SESSION_DRIVER: database
       DB_CONNECTION: pgsql
       DB_HOST: localhost
+      DB_PORT: 5432
       DB_PASSWORD: postgres
       DB_USERNAME: postgres
       DB_DATABASE: postgres
