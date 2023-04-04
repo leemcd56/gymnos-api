@@ -15,11 +15,12 @@ jobs:
       QUEUE_CONNECTION: sync
       SESSION_DRIVER: database
       DB_CONNECTION: pgsql
-      DB_HOST: localhost
+      DB_HOST: postgres
       DB_PORT: 5432
       DB_PASSWORD: postgres
       DB_USERNAME: postgres
       DB_DATABASE: postgres
+
     services:
       postgres:
         image: postgres
@@ -30,6 +31,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
     steps:
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
