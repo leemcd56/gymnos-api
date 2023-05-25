@@ -39,9 +39,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-          
-    - name: Build frontend
-      run: npm run development
       
     - name: Install PHP versions
       uses: shivammathur/setup-php@v2
