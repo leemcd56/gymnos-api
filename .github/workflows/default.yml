@@ -35,7 +35,7 @@ jobs:
         php-versions: [ '8.2','8.1' ]
         dependency-stability: [ 'prefer-none' ]
 
-    name: PHP ${{ matrix.php-versions }) (${{ matrix.operating-system}})
+    name: PHP ${{ matrix.php-versions }} (${{ matrix.operating-system}})
 
     steps:
     - uses: actions/checkout@v3
