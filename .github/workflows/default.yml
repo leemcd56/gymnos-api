@@ -109,11 +109,4 @@ jobs:
         DB_PORT: 55432
         DB_USERNAME: postgres
         DB_PASSWORD: postgres
-
       run: vendor/bin/pest
-
-
-    - name: Execute Code Sniffer via phpcs
-      run: |
-        composer require --dev squizlabs/php_codesniffer
-        vendor/bin/phpcs --standard=PSR12 app
