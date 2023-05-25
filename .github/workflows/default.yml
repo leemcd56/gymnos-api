@@ -16,7 +16,7 @@ jobs:
       QUEUE_CONNECTION: sync
       SESSION_DRIVER: database
       DB_CONNECTION: pgsql
-      DB_HOST: localhost
+      DB_HOST: postgres
       DB_PORT: 5432
       DB_PASSWORD: postgres
       DB_USERNAME: postgres
