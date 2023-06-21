@@ -12,9 +12,6 @@ jobs:
 
     name: Laravel (PHP ${{ matrix.php-versions }})
 
-    needs:
-      - php-cs-fixer
-
     env:
       BROADCAST_DRIVER: log
       CACHE_DRIVER: file
