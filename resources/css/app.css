@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.g-button {
+    @apply rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300;
+    @apply hover:bg-gray-50;
+    @apply dark:bg-white/10 dark:text-white hover:bg-white/20 dark:ring-0;
+
+    &.g-button-primary {
+        @apply bg-cyan-500;
+    }
+}
+
+.g-h2 {
+    @apply text-2xl font-bold leading-9 tracking-tight text-gray-900;
+    @apply dark:text-white;
+}
+
+.g-input {
+    @apply block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300;
+    @apply placeholder:text-gray-400;
+    @apply focus:ring-2 focus:ring-inset focus:ring-indigo-600;
+    @apply sm:text-sm sm:leading-6;
+    @apply dark:bg-white/5 dark:text-white dark:ring-white/10;
+}
+
+.g-input-label {
+    @apply block text-sm font-medium leading-6 text-gray-900;
+    @apply dark:text-white;
+}

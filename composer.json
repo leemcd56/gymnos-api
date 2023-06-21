@@ -12,7 +12,9 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "santigarcor/laratrust": "^8.2",
+        "staudenmeir/laravel-merged-relations": "^1.6"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.30",
