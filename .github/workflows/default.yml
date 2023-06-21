@@ -7,34 +7,6 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  php-cs-fixer:
-    timeout-minutes: 10
-
-    name: Apply PHP CS Fixer
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        if: github.ref != 'refs/heads/main'
-        uses: actions/checkout@v2
-        with:
-          ref: "${{ github.head_ref }}"
-      - name: Cache .php-cs-fixer.cache
-        uses: actions/cache@v2
-        with:
-          path: ./.php-cs-fixer.cache
-          key: php-cs-cache
-      - name: Run php-cs-fixer
-        if: github.ref != 'refs/heads/main'
-        uses: docker://oskarstark/php-cs-fixer-ga
-      - name: Commit changes back to branch
-        if: github.ref != 'refs/heads/main'
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Apply php-cs-fixer changes"
-          branch: "${{ github.head_ref }}"
-
   laravel-tests:
     timeout-minutes: 15
 
