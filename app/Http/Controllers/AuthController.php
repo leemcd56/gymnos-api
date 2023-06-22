@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{Auth, Hash};
+use Illuminate\Http\{Request, JsonResponse};
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
 class AuthController extends Controller
@@ -19,9 +18,9 @@ class AuthController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function login(Request $request): RedirectResponse
+    public function login(Request $request): JsonResponse
     {
         $request->validate([
             'email'       => 'required|email',
@@ -57,11 +56,16 @@ class AuthController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function register(Request $request): RedirectResponse
+    public function register(Request $request): JsonResponse
     {
         $request->validate([
+            'username' => [
+                'required',
+                'string',
+                'unique:users,username',
+            ],
             'email'    => [
                 'required',
                 'email',
@@ -79,6 +83,7 @@ class AuthController extends Controller
         ]);
 
         User::create([
+            'username' => $request->username,
             'email'    => $request->email,
             'password' => Hash::make($request->password),
         ]);

@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Response::macro('withJson', function (array $data) {
             $defaults = [
-                'message' => 'Success',
+                'message' => __('auth.success'),
                 'status'  => 200,
                 'data'    => [],
             ];

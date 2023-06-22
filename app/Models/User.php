@@ -10,10 +10,12 @@ use Illuminate\Database\Eloquent\Relations\{BelongsToMany, HasManyThrough, HasOn
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Laratrust\Contracts\LaratrustUser;
+use Laratrust\Traits\HasRolesAndPermissions;
 
-class User extends Authenticatable
+class User extends Authenticatable implements LaratrustUser
 {
-    use HasApiTokens, HasFactory, Notifiable, Prunable;
+    use HasApiTokens, HasFactory, HasRolesAndPermissions, Notifiable, Prunable;
 
     /**
      * The attributes that are mass assignable.
