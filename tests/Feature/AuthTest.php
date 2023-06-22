@@ -3,7 +3,7 @@
 use App\Models\User;
 
 it('can accept user registrations', function () {
-    $response = $this->post('/api/auth/register', [
+    $response = $this->post('/rest/auth/register', [
         'username'              => 'fancynancy',
         'email'                 => 'nancy.picklefeet@example.com',
         'password'              => '*Dev@2023',
@@ -24,7 +24,7 @@ it('can accept user registrations', function () {
 it('can accept a login request from an unapproved user', function () {
     $user = User::factory()->unverified()->create();
 
-    $response = $this->post('/api/auth/login', [
+    $response = $this->post('/rest/auth/login', [
         'email'       => $user->email,
         'password'    => 'password',
         'device_name' => 'Pest',
@@ -44,7 +44,7 @@ it('can accept a login request from an unapproved user', function () {
 it('can accept a login request from an approved user', function () {
     $user = User::factory()->create();
 
-    $response = $this->post('/api/auth/login', [
+    $response = $this->post('/rest/auth/login', [
         'email'       => $user->email,
         'password'    => 'password',
         'device_name' => 'Pest',
